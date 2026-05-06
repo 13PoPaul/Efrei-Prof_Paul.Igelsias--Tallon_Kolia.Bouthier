@@ -17,7 +17,7 @@ body {
 
 header {
     background-color: #0A316C;
-    padding: 1rem;
+    padding: 1rem 2rem;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -26,95 +26,330 @@ header {
 
 header .logo {
     width: 200px; 
-    margin-right: 20px; /* Espace de sécurité imposé par la charte */
+    margin-right: 20px;
 }
 
 nav {
     display: flex;
-    gap: 1rem;
+    gap: 2rem; /* Espacement augmenté pour correspondre au design */
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 0.5rem;
-    font-size: 22.5px;
+    font-size: 18px; /* Ajusté pour plus de finesse */
     font-weight: 500;
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }
 
 header h4 {
     margin: 0;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: normal;
 }
 
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- NOUVEAUX STYLES POUR LE DESIGN DE LA PAGE D'ACCUEIL --- */
+
+.content-panel {
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* La fameuse bordure bleue épaisse en haut de la carte blanche */
+    border-top: 10px solid #0A316C; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    margin-top: 1rem;
+}
+
+.intro-section {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1 1 400px;
+    min-width: 280px;
+}
+
+.intro-section h2 {
+    color: #0A316C;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.intro-section p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    max-width: 900px;
+    text-align: left;
+}
+
+.intro-image {
+    flex: 0 0 420px;
+    text-align: center;
+}
+
+.intro-image a {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-image img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid #eef2f5;
+    box-shadow: 0 10px 30px rgba(10, 49, 108, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.intro-image a:hover img {
+    transform: scale(1.02);
+    border-color: #0A316C;
+    box-shadow: 0 14px 35px rgba(10, 49, 108, 0.18);
+}
+
+.discover-btn {
+    display: inline-block;
+    background-color: #0A316C;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid #0A316C;
+}
+
+.discover-btn:hover {
+    background-color: white;
+    color: #0A316C;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background: rgba(10, 49, 108, 0.78);
+    color: #ffffff;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: rgba(10, 49, 108, 0.85);
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    z-index: 2;
+}
+
+.carousel-control:hover {
+    background-color: rgba(10, 49, 108, 1);
+}
+
+.carousel-control.prev {
+    left: 1rem;
+}
+
+.carousel-control.next {
+    right: 1rem;
+}
+
+.cards-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.article-section-title {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.article-section-title h3 {
+    color: #0A316C;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-section-title p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 760px;
+}
+
+.card {
+    flex: 1;
+    background-color: #fcfcfc;
+    border: 1px solid #eef2f5;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+}
+
+.card-title {
+    color: #0A316C;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+/* Style des liens de cartes */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+    transform: translateY(-5px);
+}
+
+.card-link:hover .card {
+    background-color: #f5f9ff;
+    border-color: #0A316C;
+    box-shadow: 0 8px 16px rgba(10, 49, 108, 0.15);
+}
+
+/* Style spécifique pour les cartes d'articles */
+.article-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card-date {
+    color: #0A316C;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.card-description {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Style de la carte centrale en pointillés */
+.dashed-card {
+    background-color: transparent;
+    border: 2px dashed #0A316C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #0A316C;
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
 
 footer {
-    background-color: #0A316C; /* Academic Blue */
-    padding: 2rem; 
-    color: #FFFFFF; /* Pure White */
+    background-color: #0A316C;
+    padding: 1.5rem 2rem; 
+    color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Optional: helps push the footer to the bottom of the page if the body content is short */
     margin-top: auto; 
 }
 
 .footer-nav {
     display: flex;
     gap: 1rem;
-    
 }
 
 .footer-nav a {
-    color: #FFFFFF; /* Pure White */
+    color: #FFFFFF;
     text-decoration: none;
     padding: 0.5rem;
     font-size: 16px;
     font-family: 'Open Sans', 'Roboto', sans-serif; 
-    font-size: 22.5px;
     font-weight: 500;
 }
 
 .footer-nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }
 
 .footer-logo {
-    width: 200px;
+    width: 150px;
 }
-
-main {
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Typographie simple */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-p {
-    margin-bottom: 1rem;
-}
-
-ul {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
