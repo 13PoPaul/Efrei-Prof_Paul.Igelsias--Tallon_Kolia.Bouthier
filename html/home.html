@@ -19,16 +19,111 @@
     </header>
 
     <main>
-        <h1>Welcome to Efrei Prof</h1>
-        <p>This is the home page for the Efrei Prof website.</p>
+        <!-- Conteneur principal inspiré du nouveau design -->
+        <div class="content-panel">
+            <div class="intro-section">
+                <div class="intro-text">
+                    <h2>Welcome to Efrei Computer Science Department</h2>
+                    <p>Discover a world-class computer science education where innovation meets expertise. Our department is dedicated to training the next generation of tech leaders through cutting-edge research, hands-on projects, and collaboration with industry pioneers.</p>
+                    <p>Explore our faculty's groundbreaking research, stay updated with the latest news and events, and find valuable resources for your academic journey in computer science.</p>
+                    <a href="courses.html" class="discover-btn">Discover Our Courses</a>
+                </div>
+                <div class="intro-image">
+                    <a href="https://eng.efrei.fr/undergraduate-programs/computer-science/" target="_blank" rel="noopener noreferrer">
+                        <img src="../img/recherche3-1.jpg" alt="Efrei Computer Science Department" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carrousel d'images Efrei entre le bouton et les articles -->
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="../img/1.jpg" alt="Efrei Computer Science research" />
+                        <div class="carousel-caption">Efrei Computer Science research and innovation</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/2.jpg" alt="Efrei logo" />
+                        <div class="carousel-caption">A dynamic Efrei community for future tech leaders</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/3.jpg" alt="Efrei campus image" />
+                        <div class="carousel-caption">Explore the Efrei Computer Science department today</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/4.jpg" alt="Campus event" />
+                        <div class="carousel-caption">Innovation and collaboration across campus</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/5.jpg" alt="Computer science students" />
+                        <div class="carousel-caption">Students shaping tomorrow with digital skills</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/6.jpg" alt="Technology in action" />
+                        <div class="carousel-caption">Technology in action at Efrei's computer science department</div>
+                    </div>
+                </div>
+                <button class="carousel-control prev" aria-label="Previous slide">‹</button>
+                <button class="carousel-control next" aria-label="Next slide">›</button>
+            </div>
+
+            <!-- Nouvelle rangée pour les 5 cadres d'articles -->
+            <div class="article-section-title">
+                <h3>Featured Efrei Computer Science Articles</h3>
+                <p>Read the latest research, faculty insights and academic resources from our department.</p>
+            </div>
+            <div class="cards-container" style="margin-top: 2rem; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+                <a href="https://hal.science/hal-05355604" class="card-link">
+                    <div class="card article-card">
+                        <div class="card-icon">📰</div>
+                        <h3 class="card-title">A Novel AI/ML SIEM</h3>
+                        <p class="card-date">May 2026</p>
+                        <p class="card-description">Latest news from the CS department and upcoming events.</p>
+                    </div>
+                </a>
+                <a href="https://hal.science/hal-04714629" class="card-link">
+                    <div class="card article-card">
+                        <div class="card-icon">🔬</div>
+                        <h3 class="card-title">Research & Innovation</h3>
+                        <p class="card-date">April 2026</p>
+                        <p class="card-description">Learn about new research projects and student achievements.</p>
+                    </div>
+                </a>
+                <a href="https://hal.science/hal-04714612" class="card-link">
+                    <div class="card article-card">
+                        <div class="card-icon">💻</div>
+                        <h3 class="card-title">Coding Tips & Guides</h3>
+                        <p class="card-date">March 2026</p>
+                        <p class="card-description">Find useful tips for coding, exams, and academic success.</p>
+                    </div>
+                </a>
+                <a href="https://hal.science/hal-05330722" class="card-link">
+                    <div class="card article-card">
+                        <div class="card-icon">👨‍🎓</div>
+                        <h3 class="card-title">Faculty Profiles</h3>
+                        <p class="card-date">February 2026</p>
+                        <p class="card-description">Discover faculty profiles and their areas of expertise.</p>
+                    </div>
+                </a>
+                <a href="https://hal.science/hal-04533065" class="card-link">
+                    <div class="card article-card">
+                        <div class="card-icon">🛠️</div>
+                        <h3 class="card-title">Digital Tools & Learning</h3>
+                        <p class="card-date">January 2026</p>
+                        <p class="card-description">Stay informed with practical guides on digital tools and learning.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </main>
+
     <footer>
-    <nav class="footer-nav">
-        <a href="about.html">About</a>
-    </nav>
-    <a href="https://www.efrei.fr/" class="footer-logo-link">
-        <img src="../img/logo_efrei_assas_white.png" alt="EfreiProf Logo" class="footer-logo">
-    </a>
+        <nav class="footer-nav">
+            <a href="about.html">About</a>
+        </nav>
+        <a href="https://www.efrei.fr/" class="footer-logo-link">
+            <img src="../img/logo_efrei_assas_white.png" alt="Efrei Logo" class="footer-logo">
+        </a>
     </footer>
     <script src="../js/main.js"></script>
 </body>
