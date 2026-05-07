@@ -5,13 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efrei Prof - Courses</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Styles spécifiques pour le tableau (à ajouter dans style.css) */
+        .table-container {
+            margin-top: 2rem;
+            max-height: 480px; /* Hauteur ajustée pour afficher ~5 lignes */
+            overflow-y: auto;  /* Ajoute la barre de scroll verticale si besoin */
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f5;
+            background-color: #ffffff;
+            position: relative;
+        }
+        .courses-table tbody tr {
+            cursor: pointer;
+        }
+
+        /* Personnalisation de la barre de scroll pour qu'elle soit élégante */
+        .table-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 0 8px 8px 0;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 10px;
+        }
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #0A316C; /* Bleu Efrei au survol */
+        }
+
+        .courses-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .courses-table th {
+            background-color: #0A316C;
+            color: #ffffff;
+            padding: 1.2rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            white-space: nowrap;
+            /* Garde l'en-tête fixe en haut quand on scroll */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .courses-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #eef2f5;
+            color: #555;
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        .courses-table tbody tr:hover {
+            background-color: #f5f9ff;
+            transition: background-color 0.3s ease;
+        }
+
+        .courses-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Style pour les étiquettes de catégories dans le tableau */
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0A316C;
+            background-color: #eef4ff;
+            border: 1px solid #d6e2f2;
+            white-space: nowrap;
+        }
+
+        .courses-table strong {
+            color: #0A316C;
+            font-size: 1.05rem;
+        }
+
+        /* Nouveau style pour le gros bouton "Next Page" */
+        .large-btn {
+            display: inline-block;
+            background-color: #0A316C;
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid #0A316C;
+            box-shadow: 0 4px 6px rgba(10, 49, 108, 0.1);
+        }
+
+        .large-btn:hover {
+            background-color: white;
+            color: #0A316C;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(10, 49, 108, 0.2);
+        }
+    </style>
 </head>
 <body>
     <header>
         <a href="home.html"><img src="../img/efreiprof_logo.png" alt="Efrei Logo" class="logo"></a>
         <nav>
             <a href="home.html">Home</a>
-            <a href="courses.html">Courses</a>
+            <a href="courses.html" style="background-color: rgba(255, 255, 255, 0.1); border-radius: 4px;">Courses</a>
             <a href="faculty.html">Faculty</a>
             <a href="about.html">About</a>
         </nav>
@@ -19,14 +128,171 @@
     </header>
 
     <main>
+        <div class="content-panel">
+            <!-- Section d'introduction des cours -->
+            <div class="intro-section">
+                <div class="intro-text">
+                    <h2>Computer Science Curriculum</h2>
+                    <p>The Efrei Computer Science Department offers a comprehensive and dynamic curriculum designed to prepare future engineers for the rapidly evolving tech industry. Our teaching philosophy blends strong theoretical foundations with intensive, hands-on practical projects.</p>
+                    <p>From fundamental algorithms and object-oriented programming to advanced artificial intelligence and complex system architecture, our courses cover the full spectrum of modern computer science.</p>
+                </div>
+                <div class="intro-image">
+                    <a href="https://eng.efrei.fr/undergraduate-programs/computer-science/" target="_blank" rel="noopener noreferrer">
+                        <img src="../img/recherche3-1.jpg" alt="Department of Computer Science" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Titre de la section des domaines -->
+            <div class="article-section-title">
+                <h3>Core Study Tracks & Majors</h3>
+                <p>Discover the main disciplines and technical specializations covered throughout our engineering program.</p>
+            </div>
+
+            <!-- Grille des domaines d'études reprenant le design des cartes -->
+            <div class="cards-container" style="margin-top: 2rem; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+                
+                <!-- Carte 1 : Software Engineering -->
+                <div class="card article-card">
+                    <div class="card-icon">💻</div>
+                    <h3 class="card-title">Software Engineering</h3>
+                    <p class="card-description">Master modern programming languages (Java, C++, Python, JavaScript), web & mobile development, and advanced software architecture principles.</p>
+                </div>
+
+                <!-- Carte 2 : Data & AI -->
+                <div class="card article-card">
+                    <div class="card-icon">🧠</div>
+                    <h3 class="card-title">Data & Artificial Intelligence</h3>
+                    <p class="card-description">Dive into machine learning, deep learning, data visualization, and big data management to build intelligent, data-driven systems.</p>
+                </div>
+
+                <!-- Carte 3 : Cybersecurity -->
+                <div class="card article-card">
+                    <div class="card-icon">🔐</div>
+                    <h3 class="card-title">Cybersecurity</h3>
+                    <p class="card-description">Learn to protect information systems through ethical hacking, network security protocols, cryptography, and risk management strategies.</p>
+                </div>
+
+                <!-- Carte 4 : Cloud & IT Networks -->
+                <div class="card article-card">
+                    <div class="card-icon">☁️</div>
+                    <h3 class="card-title">Cloud & Network Infrastructure</h3>
+                    <p class="card-description">Understand modern infrastructure by studying cloud computing architectures, IoT, network administration, and DevOps practices.</p>
+                </div>
+                
+            </div>
+
+            <!-- SECTION : Tableau complet des matières (SCROLLABLE) -->
+            <div class="article-section-title" style="margin-top: 4rem;">
+                <h3>Full Course Directory</h3>
+                <p>A detailed overview of the core modules and electives taught across the Computer Science department. Scroll down to see all courses.</p>
+            </div>
+
+            <div class="table-container">
+                <table class="courses-table">
+                    <thead>
+                        <tr>
+                            <th>Track / Category</th>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Credits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Software Engineering -->
+                        <tr onclick="window.location.href='course/oop.html'">
+                            <td><span class="badge">Software Eng.</span></td>
+                            <td><strong>Object-Oriented Programming</strong></td>
+                            <td>Advanced concepts in Java and C++...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                        <tr onclick="window.location.href='course/ads.html'">
+                            <td><span class="badge">Computer Science</span></td>
+                            <td><strong>Algorithms & Data Structures</strong></td>
+                            <td>Complexity analysis, graph theory, trees, hash tables...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                        <tr onclick="window.location.href='course/fwd.html'">
+                            <td><span class="badge">Web Dev</span></td>
+                            <td><strong>Full-Stack Web Development</strong></td>
+                            <td>Building scalable applications using React, Node.js...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+
+                        <!-- Data & AI -->
+                        <tr onclick="window.location.href='course/dm.html'">
+                            <td><span class="badge">Data Eng.</span></td>
+                            <td><strong>Databases Management</strong></td>
+                            <td>Relational algebra, advanced SQL, NoSQL...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                        <tr onclick="window.location.href='course/ml.html'">
+                            <td><span class="badge">Data Science</span></td>
+                            <td><strong>Machine Learning Foundations</strong></td>
+                            <td>Supervised and unsupervised learning, regression...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                        <tr onclick="window.location.href='course/bdp.html'">
+                            <td><span class="badge">Data Eng.</span></td>
+                            <td><strong>Big Data Processing</strong></td>
+                            <td>Hadoop ecosystem, Apache Spark, and data pipelines...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+
+                        <!-- Cybersecurity -->
+                        <tr onclick="window.location.href='course/ac.html'">
+                            <td><span class="badge">Cybersecurity</span></td>
+                            <td><strong>Applied Cryptography</strong></td>
+                            <td>Symmetric/asymmetric encryption algorithms, hash functions...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                       <tr onclick="window.location.href='course/nseh.html'">
+                            <td><span class="badge">Cybersecurity</span></td>
+                            <td><strong>Network Security & Ethical Hacking</strong></td>
+                            <td>Penetration testing techniques, vulnerability assessment...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+
+                        <!-- Cloud & Networks -->
+                        <tr onclick="window.location.href='course/ccd.html'">
+                            <td><span class="badge">DevOps</span></td>
+                            <td><strong>Cloud Computing & DevOps</strong></td>
+                            <td>Infrastructure as Code (IaC), AWS/Azure, CI/CD pipelines...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                        <tr onclick="window.location.href='course/tcp.html'">
+                            <td><span class="badge">Networking</span></td>
+                            <td><strong>TCP/IP Networks</strong></td>
+                            <td>OSI model, routing protocols, subnetting...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+
+                        <!-- Core Science / Math -->
+                        <tr onclick="window.location.href='course/dms.html'">
+                            <td><span class="badge">Mathematics</span></td>
+                            <td><strong>Discrete Mathematics</strong></td>
+                            <td>Logic, set theory, combinatorics, probability...</td>
+                            <td>5 ECTS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- NOUVEAU : Grand bouton centré pour passer à la suite -->
+            <div style="text-align: center; margin-top: 3.5rem; margin-bottom: 1rem;">
+                <a href="faculty.html" class="large-btn">Discover Faculty</a>
+            </div>
+
+        </div>
     </main>
+
     <footer>
-    <nav class="footer-nav">
-        <a href="about.html">About</a>
-    </nav>
-    <a href="https://www.efrei.fr/" class="footer-logo-link">
-        <img src="../img/logo_efrei_assas_white.png" alt="EfreiProf Logo" class="footer-logo">
-    </a>
+        <nav class="footer-nav">
+            <a href="about.html">About</a>
+        </nav>
+        <a href="https://www.efrei.fr/" class="footer-logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="../img/logo_efrei_assas_white.png" alt="Efrei Logo" class="footer-logo">
+        </a>
     </footer>
     <script src="../js/main.js"></script>
 </body>
