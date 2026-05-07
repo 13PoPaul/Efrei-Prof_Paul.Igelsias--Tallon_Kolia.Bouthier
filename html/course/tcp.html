@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efrei Prof - Course Details</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        /* Styles spécifiques pour la page de détails du cours */
+        .course-header {
+            border-bottom: 2px dashed #eef2f5;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .course-header h1 {
+            color: #0A316C;
+            font-size: 2.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0A316C;
+            background-color: #eef4ff;
+            border: 1px solid #d6e2f2;
+        }
+
+        .course-content h3 {
+            color: #0A316C;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-content p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .course-content ul {
+            margin-left: 2rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-content li::marker {
+            color: #0A316C;
+        }
+
+        /* --- STYLES DES BOUTONS --- */
+        .action-buttons {
+            display: flex;
+            justify-content: center; /* Centre les boutons horizontalement */
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eef2f5;
+            flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur les petits écrans */
+        }
+
+        .large-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0A316C;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #0A316C;
+            box-shadow: 0 4px 6px rgba(10, 49, 108, 0.1);
+        }
+
+        .large-btn:hover {
+            background-color: white;
+            color: #0A316C;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(10, 49, 108, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../home.html"><img src="../../img/efreiprof_logo.png" alt="Efrei Logo" class="logo"></a>
+        <nav>
+            <a href="../home.html">Home</a>
+            <a href="../courses.html" style="background-color: rgba(255, 255, 255, 0.1); border-radius: 4px;">Courses</a>
+            <a href="../faculty.html">Faculty</a>
+            <a href="../about.html">About</a>
+        </nav>
+        <h4>Efrei Prof - Course Details</h4>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <div class="course-header">
+                <span class="badge">Networking</span>
+                <h1>TCP/IP Networks</h1>
+                <div class="course-meta">
+                    <span>📅 Semester 2</span>
+                    <span>•</span>
+                    <span>🎓 5 ECTS Credits</span>
+                    <span>•</span>
+                    <span>👨‍🏫 Prof. Vint Cerf</span>
+                </div>
+            </div>
+
+            <div class="course-content">
+                <h3>Course Overview</h3>
+                <p>This course provides a comprehensive introduction to computer networking principles. Students will explore the OSI and TCP/IP models, master IPv4/IPv6 subnetting, implement routing protocols, and learn how to capture and analyze network packets to troubleshoot real-world connectivity issues.</p>
+                
+                <h3>Learning Objectives</h3>
+                <ul>
+                    <li>Understand the 7 layers of the OSI model and how they map to the TCP/IP protocol suite.</li>
+                    <li>Master IP addressing, CIDR notation, and advanced subnetting techniques.</li>
+                    <li>Configure and troubleshoot routing protocols (such as OSPF and BGP) and switching concepts.</li>
+                    <li>Perform network packet analysis and diagnose network anomalies using Wireshark.</li>
+                </ul>
+
+                <h3>Prerequisites</h3>
+                <p>Basic knowledge of computer hardware, operating systems (Windows/Linux), and a general understanding of IT infrastructure are recommended.</p>
+            </div>
+            
+            <div class="course-content quiz-section">
+                <h3>🧠 Quick Concept Check</h3>
+                <p>Test your intuition before starting the course!</p>
+                
+                <div class="quiz-card" id="tcp-quiz">
+                    <div class="question-block" id="qb1">
+                        <p><strong>1. Which layer of the OSI model is responsible for logical addressing and routing data packets?</strong></p>
+                        <div class="options">
+                            <label class="quiz-label"><input type="radio" name="q1" value="wrong"> Transport Layer</label>
+                            <label class="quiz-label"><input type="radio" name="q1" value="correct"> Network Layer</label>
+                            <label class="quiz-label"><input type="radio" name="q1" value="wrong"> Data Link Layer</label>
+                        </div>
+                    </div>
+
+                    <div class="question-block" id="qb2">
+                        <p><strong>2. Which software tool is most commonly used for network protocol analysis and packet sniffing?</strong></p>
+                        <div class="options">
+                            <label class="quiz-label"><input type="radio" name="q2" value="wrong"> Docker</label>
+                            <label class="quiz-label"><input type="radio" name="q2" value="wrong"> Metasploit</label>
+                            <label class="quiz-label"><input type="radio" name="q2" value="correct"> Wireshark</label>
+                        </div>
+                    </div>
+
+                    <button class="secondary-btn quiz-btn" onclick="checkQuiz()">Check Answers</button>
+                    
+                    <div id="quiz-result" class="quiz-result"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="../courses.html" class="large-btn"> Back to Courses</a>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <a href="../about.html">About</a>
+        </nav>
+        <a href="https://www.efrei.fr/" class="footer-logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="../../img/logo_efrei_assas_white.png" alt="Efrei Logo" class="footer-logo">
+        </a>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
